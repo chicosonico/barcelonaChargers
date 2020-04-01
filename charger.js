@@ -23,14 +23,14 @@ fetch('https://api.bsmsa.eu/ext/api/bsm/chargepoints/chargepoints_states')
   });
 
 
-function logArrayElements(element, index, array) {
+function logArrayElements(element) {
   const { Station_name, Station_address, Station_lat, Station_lng } = element;
   // console.log(Station_name);
   // console.log(Station_address);
   // console.log(Station_lat);
   // console.log(Station_lng); 
 
-  var content = "<h3>" + Station_name + "</h3>" + "<p>" + Station_address + "</p>";
+  var content = "<p><b>" + Station_name + "</b></p>" + "<p>" + Station_address + "</p>";
   marker = L.marker([Station_lat, Station_lng], { icon: greenIcon }).bindPopup(content).addTo(mymap).openPopup();
 
 }

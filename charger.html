@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Charging points for electric vehicles - Barcelona</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
    crossorigin=""/>
@@ -20,17 +21,51 @@
 </head>
 <body>
 
-    <h1>Charging points for electric vehicles - Barcelona</h1>
+<div class="content mt-4">
+
+    <div class="row">
+
+        <div class="col-2"></div>
+
+        <div class="col-8">
+
+            <div class="card border-success">
+                <div class="card-body">
+                  <h5 class="card-title">Puntos de recarga para vehículos eléctricos - Barcelona</h5>
+                  <p class="card-text">Datos obtenidos de Open Data BCN - Ajuntament de Barcelona</p>
+                  <p class="card-text"><small class="text-muted">Tiempo de recarga: 7 seg.</small></p>
+                </div>
+                <div class="card-img-bottom" src="..." alt="Card image cap">
+        
+                <div id="issMap"></div>
+                </div>
+              </div>
+        
+        </div>
+
+        <div class="col-2"></div>
 
 
-<div id="data1"></div>
-<div id="data2"></div>
 
-<div id="issMap"></div>
+
+    </div>
+
+    
+
+
+</div>
+    
+
+
+
+  
+  
    
  
-
-    <script src="charger.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="charger.js"></script>
     
 </body>
 </html>
