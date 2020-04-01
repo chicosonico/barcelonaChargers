@@ -1,30 +1,47 @@
-const  mymap = L.map('issMap').setView([41.388326, 2.169696], 12);
-const marker = L.marker([0, 0]).addTo(mymap);
+const mymap = L.map('issMap').setView([41.388326, 2.169696], 13);
+
 
 const attribution =
-'&copy; <a href= "https://www.openstreetmap.org/copyright"> OpenSreetMap </a> contributors';
+  '&copy; <a href= "https://www.openstreetmap.org/copyright"> OpenSreetMap </a> contributors';
 
 const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-const tiles = L.tileLayer(tileUrl, {attribution});
+const tiles = L.tileLayer(tileUrl, { attribution });
 tiles.addTo(mymap);
 
 
 fetch('https://api.bsmsa.eu/ext/api/bsm/chargepoints/chargepoints_states')
-  .then(function(response) {
+  .then(function (response) {
     return response.json();
   })
-  .then(function(myJson) {
-    console.log(myJson);
+  .then(function (myJson) {
+    // console.log(myJson);
     myJson.forEach(logArrayElements);
+  })
+  .catch(error => {
+    console.log('error!');
+    console.log(error);
   });
-  
 
-     function logArrayElements(element, index, array) {
-        const {Station_name, Station_address, Station_lat, Station_lng} = element;
-        console.log(Station_name);
-        console.log(Station_address);
-        console.log(Station_lat);
-        console.log(Station_lng); 
-    }
-  
+
+function logArrayElements(element, index, array) {
+  const { Station_name, Station_address, Station_lat, Station_lng } = element;
+  // console.log(Station_name);
+  // console.log(Station_address);
+  // console.log(Station_lat);
+  // console.log(Station_lng); 
+
+  var content = "<h3>" + Station_name + "</h3>" + "<p>" + Station_address + "</p>";
+  marker = L.marker([Station_lat, Station_lng], { icon: greenIcon }).bindPopup(content).addTo(mymap).openPopup();
+
+}
+
+var greenIcon = new L.Icon({
+  iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
+
 
