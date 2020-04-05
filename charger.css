@@ -32,9 +32,32 @@
       font-size: 10px;
     } */
 
-    #progress{
-    
-      z-index: 999;
+    /* #progress{
+      
       position: relative;
+      z-index: 1;
 
-  };
+  }; */
+
+  .meter { 
+    height: 10px;
+    position: relative;
+    background: #f3efe6;
+    overflow: hidden;
+}
+
+.meter span {
+    display: block;
+    height: 100%;
+}
+
+.progress {
+    background-color: #65e46b;
+    animation: progressBar 3s ease-in-out;
+    animation-fill-mode:both; 
+}
+
+@keyframes progressBar {
+  0% { width: 0; }
+  100% { width: 100%; }
+}

@@ -8,50 +8,12 @@ const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 const tiles = L.tileLayer(tileUrl, { attribution });
 tiles.addTo(mymap);
 
-var cvs = document.getElementById("canvas");
-    ctx = cvs.getContext("2d");
-    sA = (Math.PI / 180) * 45;
-    sE = (Math.PI / 180) * 90;
-    ca = canvas.width;
-    ch = canvas.height;
-
-function init(){     
-    
-    setInterval(function(){
-        
-       ctx.clearRect(0, 0, ca, ch);
-       ctx.lineWidth = 15;
-      
-       ctx.beginPath();
-       ctx.strokeStyle = "#ffffff";     
-       ctx.shadowColor = "#eeeeee";
-       ctx.shadowOffsetX = 2;
-       ctx.shadowOffsetY = 2;
-       ctx.shadowBlur = 5;
-       ctx.arc(50, 50, 25, 0, 360, false);
-       ctx.stroke();
-       ctx.closePath();
-        
-       sE += 0.05; 
-       sA += 0.05;
-                
-       ctx.beginPath();
-       ctx.strokeStyle = "#aaaaaa";
-       ctx.arc(50, 50, 25, sA, sE, false);
-       ctx.stroke();
-       ctx.closePath();   
-        
-    }, 6);
-    
-}
-
-init();
-
 
 
  fetch('https://api.bsmsa.eu/ext/api/bsm/chargepoints/chargepoints_states')
   .then(function (response) {
     return response.json();
+    
     
   })
   .then(function (myJson) {
@@ -70,10 +32,11 @@ init();
       var content = "<p><b>" + Station_name + "</b></p>" + "<p>" + Station_address + "</p>";
       marker = L.marker([Station_lat, Station_lng], { icon: greenIcon }).bindPopup(content).addTo(mymap).openPopup();
     }
-    var barContent = document.getElementById("progress");
-    barContent.style.display = "none";
+
+    var barContent = document.getElementById("barView");
+    barContent.style.visibility = "hidden";
    
-   
+  
 
   })
   .catch(error => {

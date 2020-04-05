@@ -47,14 +47,18 @@
                             <div class="card-body">
                                 <h5 class="card-title">Puntos de recarga para vehículos eléctricos - Barcelona</h5>
                                 <p class="card-text">Datos obtenidos de Open Data BCN - Ajuntament de Barcelona</p>
-                                
+                                <div id="barView">
+                                    <p> Getting data...</p>
+                                    <div class="meter" style="display: block;">
+                                    
+                                        <span style="width:80%;"><span class="progress"></span></span>
+                                    </div>
+
+                                </div>
+                            
                             </div>
     
                             
-                       
-    
-                     
-                        
                     
     
                     </div>
@@ -64,12 +68,6 @@
                     
                         <div id="issMap" ></div>
 
-                        <div id="progress" class="center">
-                            <canvas id="canvas" width="50" height="50">
-                                <p></p>
-                            </canvas>
-                            <p class="pcircle" title="Loading, please wait." class="center" width="50"></p>
-                        </div>
                     </div>
                 </div>
 
