@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <progress id="health" value="60" max="100"></progress>
+  <button>change progress value</button>
+    <script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    /* DOM is ready, so we can query for its elements */
+    var dragonHealth = document.getElementById("health").value;
+    console.log(dragonHealth);
+    
+    /*additional code for comment*/
+    document.querySelector('button').addEventListener("click", function(event){
+      document.getElementById("health").value += 5;
+    });
+  })
+
+    </script>
+</body>
+</html>
+  

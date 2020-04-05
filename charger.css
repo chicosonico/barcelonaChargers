@@ -24,12 +24,17 @@
     }
     
    
-    .pcircle:before {
+    /* .pcircle:before {
       position: relative;
       top: 0px;
       content: attr(title);
       color: rgb(71, 64, 64);
       font-size: 10px;
-    }
+    } */
 
-  
+    #progress{
+    
+      z-index: 999;
+      position: relative;
+
+  };

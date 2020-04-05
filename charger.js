@@ -73,6 +73,7 @@ init();
     var barContent = document.getElementById("progress");
     barContent.style.display = "none";
    
+   
 
   })
   .catch(error => {
@@ -105,5 +106,3 @@ var greenIcon = new L.Icon({
   popupAnchor: [1, -34],
   shadowSize: [41, 41]
 });
-
-
